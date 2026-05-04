@@ -1,0 +1,104 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 0.3 Primitives
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    function isSignedIn() { return request.auth != null; }
+    function isEmailVerified() { return request.auth.token.email_verified == true; }
+    
+    // Admin check - either explicitly in admins collection or bootstrapped via email
+    function isAdmin() { 
+      return isSignedIn() && isEmailVerified() && 
+        (exists(/databases/$(database)/documents/admins/$(request.auth.uid)) || request.auth.token.email == "jy.simnguyen1@gmail.com"); 
+    }
+    
+    function isValidId(id) { 
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); 
+    }
+
+    // BlogPost Validation
+    function isValidBlogPost(data) {
+      return data.keys().hasAll(['title', 'excerpt', 'content', 'date', 'authorId', 'createdAt', 'updatedAt']) 
+          && data.keys().size() <= 8
+          && data.title is string && data.title.size() <= 200 && data.title.size() > 0
+          && data.excerpt is string && data.excerpt.size() <= 500
+          && data.content is string && data.content.size() <= 50000
+          && data.date is string && data.date.size() <= 50
+          && data.authorId == request.auth.uid // Identity Integrity
+          && data.createdAt is number
+          && data.updatedAt is number
+          && (('image' in data) == false || (data.image is string && data.image.size() <= 1000));
+    }
+
+    // FleetCar Validation
+    function isValidFleetCar(data) {
+      return data.keys().hasAll(['name', 'image', 'seats', 'description', 'createdAt', 'updatedAt', 'authorId'])
+          && data.keys().size() == 7
+          && data.name is string && data.name.size() <= 100 && data.name.size() > 0
+          && data.image is string && data.image.size() <= 1000
+          && data.seats is string && data.seats.size() <= 50
+          && data.description is string && data.description.size() <= 5000
+          && data.authorId == request.auth.uid
+          && data.createdAt is number
+          && data.updatedAt is number;
+    }
+
+    // Admins Validation
+    function isValidAdmin(data) {
+      return data.keys().hasAll(['email', 'createdAt'])
+          && data.keys().size() == 2
+          && data.email is string && data.email.size() <= 100
+          && data.createdAt is number;
+    }
+
+    match /admins/{adminId} {
+      // Only existing admins can read the admins list
+      allow read: if isAdmin();
+      // Only existing admins can create new admins, NO self-promotion
+      allow create: if isAdmin() && isValidId(adminId) && isValidAdmin(incoming()) && incoming().createdAt == request.time.toMillis();
+      allow update: if false; // Admins cannot be updated, only created or deleted
+      allow delete: if isAdmin() && request.auth.uid != adminId; // Cannot delete self
+    }
+
+    match /blog_posts/{postId} {
+      allow read: if true; // Publicly readable
+      allow create: if isAdmin() 
+        && isValidId(postId) 
+        && isValidBlogPost(incoming())
+        && incoming().createdAt == request.time.toMillis()
+        && incoming().updatedAt == request.time.toMillis();
+      allow update: if isAdmin()
+        && isValidId(postId)
+        && isValidBlogPost(incoming())
+        && incoming().createdAt == existing().createdAt    // Immortal Field
+        && incoming().authorId == existing().authorId      // Identity Integrity
+        && incoming().diff(existing()).affectedKeys().hasOnly(['title', 'excerpt', 'content', 'image', 'date', 'updatedAt'])
+        && incoming().updatedAt == request.time.toMillis();
+      allow delete: if isAdmin();
+    }
+
+    match /fleet_cars/{carId} {
+      allow read: if true; // Publicly readable
+      allow create: if isAdmin() 
+        && isValidId(carId) 
+        && isValidFleetCar(incoming())
+        && incoming().createdAt == request.time.toMillis()
+        && incoming().updatedAt == request.time.toMillis();
+      allow update: if isAdmin()
+        && isValidId(carId)
+        && isValidFleetCar(incoming())
+        && incoming().createdAt == existing().createdAt
+        && incoming().authorId == existing().authorId
+        && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'image', 'seats', 'description', 'updatedAt'])
+        && incoming().updatedAt == request.time.toMillis();
+      allow delete: if isAdmin();
+    }
+  }
+}

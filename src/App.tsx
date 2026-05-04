@@ -1,23 +1,19 @@
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Services from './components/Services';
-import Fleet from './components/Fleet';
-import Blog from './components/Blog';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
+import Home from './pages/Home';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminLogin from './pages/AdminLogin';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 overflow-x-hidden">
-      <Header />
-      <main>
-        <Hero />
-        <Features />
-        <Services />
-        <Fleet />
-        <Blog />
-      </main>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
