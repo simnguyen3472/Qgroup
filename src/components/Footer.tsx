@@ -1,6 +1,9 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer id="contact" className="bg-brand-blue text-white pt-16 pb-8 border-t-4 border-brand-gold">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,12 +14,12 @@ export default function Footer() {
               <img src="https://i.ibb.co/mrY6ZJJd/Gemini-Generated-Image-k4ovuak4ovuak4ov.png" alt="QGroup Transportation" className="h-14 w-auto object-contain rounded-lg" />
             </a>
             <p className="text-brand-blue-50 text-sm leading-relaxed text-gray-300">
-              Đồng hành trên mọi hành trình. Chúng tôi cam kết mang đến dịch vụ xe đưa đón, xe du lịch an toàn, đẳng cấp và chuyên nghiệp nhất tại Nha Trang và Đà Lạt.
+              {t('footer.desc')}
             </p>
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-gold uppercase tracking-wider">Liên hệ ngay</h4>
+            <h4 className="text-lg font-bold mb-6 text-brand-gold uppercase tracking-wider">{t('footer.contact')}</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-4 flex-col sm:flex-row">
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
@@ -32,7 +35,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-gold uppercase tracking-wider">Thông tin</h4>
+            <h4 className="text-lg font-bold mb-6 text-brand-gold uppercase tracking-wider">{t('footer.info')}</h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gray-400" />
@@ -52,16 +55,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-gold uppercase tracking-wider">Đăng ký nhận báo giá</h4>
-            <p className="text-sm text-gray-300 mb-4">Để lại email để nhận báo giá tốt nhất cho chuyến đi của bạn.</p>
+            <h4 className="text-lg font-bold mb-6 text-brand-gold uppercase tracking-wider">{t('footer.subscribe')}</h4>
+            <p className="text-sm text-gray-300 mb-4">{t('footer.subscribe_desc')}</p>
             <form className="flex border border-white/20 rounded-xl overflow-hidden focus-within:border-brand-gold transition-colors">
               <input 
                 type="email" 
-                placeholder="Email của bạn..." 
+                placeholder={t('footer.email_placeholder')} 
                 className="w-full bg-white/5 px-4 py-3 outline-none text-sm text-white placeholder:text-gray-500"
               />
               <button className="bg-brand-gold text-brand-blue px-4 py-3 font-bold hover:bg-yellow-400 transition-colors">
-                GỬI
+                {t('footer.send')}
               </button>
             </form>
           </div>
@@ -71,8 +74,8 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>&copy; {new Date().getFullYear()} QGroup Transportation. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors">Điều khoản dịch vụ</a>
-            <a href="#" className="hover:text-white transition-colors">Chính sách bảo mật</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer.terms')}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
           </div>
         </div>
       </div>

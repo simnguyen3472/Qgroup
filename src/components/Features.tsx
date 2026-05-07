@@ -1,34 +1,37 @@
 import { ShieldCheck, UserCheck, Clock, ThumbsUp, Star } from 'lucide-react';
-
-const features = [
-  {
-    icon: ShieldCheck,
-    title: 'An TOÀN TUYỆT ĐỐI',
-    description: 'Xe đời mới, bảo dưỡng định kỳ, trang bị đầy đủ tiện nghi'
-  },
-  {
-    icon: UserCheck,
-    title: 'TÀI XẾ CHUYÊN NGHIỆP',
-    description: 'Lịch sự, thông thạo tuyến đường, tận tâm phục vụ'
-  },
-  {
-    icon: Clock,
-    title: 'ĐÚNG GIỜ',
-    description: 'Cam kết đúng hẹn, đưa đón đúng nơi, hỗ trợ 24/7'
-  },
-  {
-    icon: ThumbsUp,
-    title: 'GIÁ CẠNH TRANH',
-    description: 'Minh bạch chi phí, không phát sinh phụ phí'
-  },
-  {
-    icon: Star,
-    title: 'DỊCH VỤ CAO CẤP',
-    description: 'Phục vụ tận tình, linh hoạt theo yêu cầu'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Features() {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: ShieldCheck,
+      title: t('features.safety_title'),
+      description: t('features.safety_desc')
+    },
+    {
+      icon: UserCheck,
+      title: t('features.driver_title'),
+      description: t('features.driver_desc')
+    },
+    {
+      icon: Clock,
+      title: t('features.time_title'),
+      description: t('features.time_desc')
+    },
+    {
+      icon: ThumbsUp,
+      title: t('features.price_title'),
+      description: t('features.price_desc')
+    },
+    {
+      icon: Star,
+      title: t('features.premium_title'),
+      description: t('features.premium_desc')
+    }
+  ];
+
   return (
     <section className="py-16 bg-white shrink-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,0 +1,77 @@
+{
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "fleet": "Fleet",
+    "blog": "Travel Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "YOUR PARTNER ON",
+    "title2": "EVERY JOURNEY",
+    "subtitle": "Safe - Premium - Professional",
+    "description": "Providing high-quality tourist car rentals, transfers, and package tours in Nha Trang and Da Lat.",
+    "where_to": "Where are you booking?",
+    "dalat": "Da Lat",
+    "nhatrang": "Nha Trang",
+    "book_now": "Book now",
+    "view_prices": "View prices"
+  },
+  "features": {
+    "safety_title": "ABSOLUTE SAFETY",
+    "safety_desc": "New cars, regularly maintained, fully equipped",
+    "driver_title": "PROFESSIONAL DRIVERS",
+    "driver_desc": "Polite, familiar with routes, dedicated service",
+    "time_title": "ON TIME",
+    "time_desc": "Committed to being on time, right place, 24/7 support",
+    "price_title": "COMPETITIVE PRICE",
+    "price_desc": "Transparent costs, no hidden fees",
+    "premium_title": "PREMIUM SERVICE",
+    "premium_desc": "Dedicated service, flexible according to requests"
+  },
+  "services": {
+    "subtitle": "Professional Services",
+    "title": "OUR SERVICES",
+    "s1": "Airport Transfer",
+    "s2": "Business - Conference",
+    "s3": "Travel - Sightseeing",
+    "s4": "Wedding - Event",
+    "s5": "Custom Rental"
+  },
+  "fleet": {
+    "subtitle": "Top Quality",
+    "title": "DIVERSE FLEET",
+    "seats_4_7": "4 - 7 SEATS",
+    "desc_4_7": "Suitable for families, small groups",
+    "seats_16": "16 SEATS",
+    "desc_16": "Comfortable, spacious",
+    "seats_29_35": "29 - 35 SEATS",
+    "desc_29_35": "Luxurious, relaxing",
+    "seats_45": "45 SEATS",
+    "desc_45": "Premium, modern",
+    "details": "Details"
+  },
+  "blog": {
+    "subtitle": "Travel Guide",
+    "title": "TRAVEL BLOG",
+    "read_more": "READ MORE",
+    "view_all": "View All Posts",
+    "post1_title": "Top 10 Must-Visit Tourist Destinations in Da Lat",
+    "post1_excerpt": "Discover beautiful destinations in Da Lat from the Valley of Love, Langbiang peak to dreamy pine forest view cafes.",
+    "post2_title": "Nha Trang Tourist Car Rental Experience From A - Z",
+    "post2_excerpt": "Detailed instructions on how to choose a car, travel itinerary, and notes when renting a tourist car to explore the coastal city of Nha Trang.",
+    "post3_title": "Suggested Itinerary to Explore the Most Beautiful Coastal Road in Vietnam",
+    "post3_excerpt": "Journey from Cam Ranh airport to the center of Nha Trang along the spectacular coastal road, with top-notch check-in stops."
+  },
+  "footer": {
+    "desc": "Your partner on every journey. We are committed to providing the safest, most premium, and professional transfer and tourist car services in Nha Trang and Da Lat.",
+    "contact": "Contact Us",
+    "info": "Information",
+    "subscribe": "Subscribe for Quotes",
+    "subscribe_desc": "Leave your email to get the best quote for your trip.",
+    "email_placeholder": "Your email...",
+    "send": "SEND",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  }
+}

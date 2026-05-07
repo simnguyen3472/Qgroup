@@ -1,23 +1,27 @@
+import { useTranslation } from 'react-i18next';
+
 export default function Services() {
+  const { t } = useTranslation();
+
   const services = [
     {
-      title: 'Đưa đón sân bay',
+      title: t('services.s1'),
       img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800',
     },
     {
-      title: 'Công tác - Hội nghị',
+      title: t('services.s2'),
       img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32f7?auto=format&fit=crop&q=80&w=800',
     },
     {
-      title: 'Du lịch - Tham quan',
+      title: t('services.s3'),
       img: 'https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&q=80&w=800',
     },
     {
-      title: 'Xe hoa - Sự kiện',
+      title: t('services.s4'),
       img: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800', // wedding/event
     },
     {
-      title: 'Cho thuê theo yêu cầu',
+      title: t('services.s5'),
       img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800',
     }
   ];
@@ -27,8 +31,8 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-sm font-bold text-brand-gold uppercase tracking-widest mb-2">Dịch vụ chuyên nghiệp</h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-brand-blue uppercase">DỊCH VỤ CỦA CHÚNG TÔI</h3>
+          <h2 className="text-sm font-bold text-brand-gold uppercase tracking-widest mb-2">{t('services.subtitle')}</h2>
+          <h3 className="text-3xl md:text-4xl font-extrabold text-brand-blue uppercase">{t('services.title')}</h3>
           <div className="w-24 h-1 bg-brand-gold mx-auto mt-6 rounded-full"></div>
         </div>
 

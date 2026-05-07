@@ -1,0 +1,77 @@
+{
+  "header": {
+    "home": "Trang chủ",
+    "services": "Dịch vụ",
+    "fleet": "Dòng xe",
+    "blog": "Blog Du Lịch",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "title1": "ĐỒNG HÀNH TRÊN",
+    "title2": "MỌI HÀNH TRÌNH",
+    "subtitle": "An Toàn - Đẳng Cấp - Chuyên Nghiệp",
+    "description": "Chuyên cung cấp dịch vụ thuê xe du lịch, xe đưa đón và tour trọn gói chất lượng cao tại Nha Trang và Đà Lạt.",
+    "where_to": "Bạn đặt xe ở?",
+    "dalat": "Đà Lạt",
+    "nhatrang": "Nha Trang",
+    "book_now": "Đặt xe ngay",
+    "view_prices": "Xem bảng giá"
+  },
+  "features": {
+    "safety_title": "AN TOÀN TUYỆT ĐỐI",
+    "safety_desc": "Xe đời mới, bảo dưỡng định kỳ, trang bị đầy đủ tiện nghi",
+    "driver_title": "TÀI XẾ CHUYÊN NGHIỆP",
+    "driver_desc": "Lịch sự, thông thạo tuyến đường, tận tâm phục vụ",
+    "time_title": "ĐÚNG GIỜ",
+    "time_desc": "Cam kết đúng hẹn, đưa đón đúng nơi, hỗ trợ 24/7",
+    "price_title": "GIÁ CẠNH TRANH",
+    "price_desc": "Minh bạch chi phí, không phát sinh phụ phí",
+    "premium_title": "DỊCH VỤ CAO CẤP",
+    "premium_desc": "Phục vụ tận tình, linh hoạt theo yêu cầu"
+  },
+  "services": {
+    "subtitle": "Dịch vụ chuyên nghiệp",
+    "title": "DỊCH VỤ CỦA CHÚNG TÔI",
+    "s1": "Đưa đón sân bay",
+    "s2": "Công tác - Hội nghị",
+    "s3": "Du lịch - Tham quan",
+    "s4": "Xe hoa - Sự kiện",
+    "s5": "Cho thuê theo yêu cầu"
+  },
+  "fleet": {
+    "subtitle": "Chất lượng hàng đầu",
+    "title": "ĐA DẠNG DÒNG XE",
+    "seats_4_7": "4 - 7 CHỖ",
+    "desc_4_7": "Phù hợp gia đình, nhóm nhỏ",
+    "seats_16": "16 CHỖ",
+    "desc_16": "Tiện nghi, rộng rãi",
+    "seats_29_35": "29 - 35 CHỖ",
+    "desc_29_35": "Sang trọng, thoải mái",
+    "seats_45": "45 CHỖ",
+    "desc_45": "Cao cấp, hiện đại",
+    "details": "Chi tiết"
+  },
+  "blog": {
+    "subtitle": "Cẩm nang du lịch",
+    "title": "BLOG DU LỊCH",
+    "read_more": "ĐỌC TIẾP",
+    "view_all": "Xem Tất Cả Bài Viết",
+    "post1_title": "Top 10 Địa Điểm Du Lịch Đà Lạt Không Thể Bỏ Qua",
+    "post1_excerpt": "Khám phá những điểm đến tuyệt đẹp tại Đà Lạt từ Thung Lũng Tình Yêu, đỉnh Langbiang đến những quán cafe view rừng thông mộng mơ.",
+    "post2_title": "Kinh Nghiệm Thuê Xe Du Lịch Nha Trang Từ A - Z",
+    "post2_excerpt": "Hướng dẫn chi tiết cách chọn xe, lịch trình di chuyển và những lưu ý khi thuê xe du lịch để khám phá thành phố biển Nha Trang trọn vẹn nhất.",
+    "post3_title": "Gợi ý Lịch Trình Khám Phá Cung Đường Biển Đẹp Nhất Việt Nam",
+    "post3_excerpt": "Hành trình từ sân bay Cam Ranh đi trung tâm Nha Trang dọc theo cung đường biển ngoạn mục, những điểm dừng chân check-in đỉnh cao."
+  },
+  "footer": {
+    "desc": "Đồng hành trên mọi hành trình. Chúng tôi cam kết mang đến dịch vụ xe đưa đón, xe du lịch an toàn, đẳng cấp và chuyên nghiệp nhất tại Nha Trang và Đà Lạt.",
+    "contact": "Liên hệ ngay",
+    "info": "Thông tin",
+    "subscribe": "Đăng ký nhận báo giá",
+    "subscribe_desc": "Để lại email để nhận báo giá tốt nhất cho chuyến đi của bạn.",
+    "email_placeholder": "Email của bạn...",
+    "send": "GỬI",
+    "terms": "Điều khoản dịch vụ",
+    "privacy": "Chính sách bảo mật"
+  }
+}

@@ -1,8 +1,10 @@
 import { ArrowRight, MapPin } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   return (
     <section id="home" className="relative pt-20 pb-16 md:pt-32 md:pb-24 flex items-center min-h-[90vh]">
@@ -24,19 +26,19 @@ export default function Hero() {
               QGROUP TRANSPORTATION
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight shadow-sm">
-              ĐỒNG HÀNH TRÊN <br/> 
-              <span className="text-brand-gold">MỌI HÀNH TRÌNH</span>
+              {t('hero.title1')} <br/> 
+              <span className="text-brand-gold">{t('hero.title2')}</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 font-medium tracking-wide py-1">
-              An Toàn - Đẳng Cấp - Chuyên Nghiệp
+              {t('hero.subtitle')}
             </p>
             <p className="text-gray-300 pb-2 mx-auto max-w-xl">
-              Chuyên cung cấp dịch vụ thuê xe du lịch, xe đưa đón và tour trọn gói chất lượng cao tại Nha Trang và Đà Lạt.
+              {t('hero.description')}
             </p>
 
             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl max-w-xl mx-auto mb-8">
               <p className="text-xl font-bold mb-4 flex items-center justify-center gap-2">
-                Bạn đặt xe ở?
+                {t('hero.where_to')}
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <button 
@@ -48,7 +50,7 @@ export default function Hero() {
                   }`}
                 >
                   <MapPin className="w-6 h-6" />
-                  Đà Lạt
+                  {t('hero.dalat')}
                 </button>
                 <button 
                   onClick={() => setSelectedLocation('nhatrang')}
@@ -59,7 +61,7 @@ export default function Hero() {
                   }`}
                 >
                   <MapPin className="w-6 h-6" />
-                  Nha Trang
+                  {t('hero.nhatrang')}
                 </button>
               </div>
             </div>
@@ -70,10 +72,10 @@ export default function Hero() {
                 className={`bg-brand-gold text-brand-blue px-8 py-4 rounded-lg font-bold hover:bg-yellow-400 transition-all flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 ${!selectedLocation && 'opacity-50 cursor-not-allowed'}`}
                 onClick={(e) => !selectedLocation && e.preventDefault()}
               >
-                Đặt xe ngay <ArrowRight className="w-5 h-5" />
+                {t('hero.book_now')} <ArrowRight className="w-5 h-5" />
               </a>
               <a href="#fleet" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition-colors flex items-center gap-2">
-                Xem bảng giá
+                {t('hero.view_prices')}
               </a>
             </div>
           </div>
